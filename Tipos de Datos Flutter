@@ -1,0 +1,88 @@
+void main(){
+  //Tipos de datos
+
+  //Numbers
+  int score = 2;
+  double price = 23.3;
+
+  //NUM almacena flotantes y enteros
+  num puntaje = 100;
+  num precio = 322.236;
+
+  //var define solo que tipo d evariable es sin necesidad de escribirlo
+  var edad = 30;
+  var peso = 13.9;
+
+  //Strings
+  String message = "Ingresa tu edad";
+  String ageMesagge = "Tu edad es: $edad";
+  String totalPrice = "El precio total es: ${precio * peso}";
+  String concatenado = message + " " + ageMesagge;
+
+  //Boolean
+  var isAdmin = true;
+  var isUser = false;
+  bool isTrue = false;
+
+  //Para usar condiciones de true o false, forzosamente tiene que ser booleano
+  if (isAdmin) {
+    //Hacemos algo
+  }
+
+
+  //Lists
+  var numbers = [1,2,3,4];
+  List<int> players = [23,44,555];
+  List<String> nombres = ["Montse","Sofia","Miguel"];
+  List<Object> objects =["julio",34];
+  List<num> nums = [12,34.65];
+
+  var largo = nums.length;
+  nums.add(9494);
+  nums.remove(12);
+  nums.removeAt(0);
+  nums.isEmpty; //Devuelve un booleano si la lista esta vacia
+  nums.isNotEmpty; //Devuelve un booleano si no esta vacia
+
+  //spread: ... = significa propagar, Acompleta
+  var list=[1,2,3];
+  var list2 = [0, ...list]; //[0,1,2,3]
+  print(list2);
+
+  //null aware spread aperator ...? Pregunta si es nulo par ano usarlo
+  var list3;
+  var list4 = [0, ...?list3];
+  print(list4);
+
+
+  var menu = [
+    'menu1',
+    'menu2',
+    if (edad > 18) 'menu3 para mayores de edad'
+  ];
+  //[menu1, menu2, menu3 para mayores de edad]
+
+  var menu2 = [
+    for (var i in list) 'menu$i'
+  ];
+  //[menu1, menu2, menu3]
+
+  print(menu);
+  print(menu2);
+
+  //Sets -> coleccion de elementos, no ordenada pero si unicos
+  var dias = {"Lunes","Martes","Miercoles"};
+  Set<String> meses = {"Enero", "Febrero","Marzo"};
+
+  //Maps -> llave, valor asociado a la llave
+  var scores = {'joe': 122, 'julio':333};
+  Map<String, int> puntajes = {'joe': 122, 'julio':333};
+  print(scores['joe']);
+  scores['joe'] = 999;
+  print(scores['joe']);
+
+  Map<String, Object> valores = {'entero': 2,'texto':"Hola", 'booleano': false };
+  print(valores);
+
+
+}
