@@ -1,0 +1,42 @@
+ late int puntos;
+void main (){
+  //Variables
+  var name = "Montse";
+  String nameStr = "Garcia";
+
+  //En DART, Todas las variables son tipo object
+  Object algo = "algo";
+  algo = 2;
+
+  //El valor las variables dynamic pueden cambiar en tiempo de ejecución
+  dynamic algo2 = "asd";
+  algo2 = 234;
+
+  // nullable -> Pueden contener un null
+  //Las variables no pueden ser null
+  // el '?' despues del tipo sirve para dejarlo nulo
+
+  int? score  = 123 ;
+  print(score);
+
+
+  //late -> Algo que pasa más tarde
+  // late : no se inicializa al momento pero si antes de usarla
+  // a) cuando una variable que no es null, pero estoy seguro de que la voy a inicializar
+  //     se decalara antes del codigo 'late int puntos'
+  // b)cuando un recurso necesita muchos recursos para inicializarse
+  puntos = 1;
+  print(puntos);
+
+
+  //final -> la variable solo se va a inicializar una vez y no se va a poder modificar
+  // const -> tampoco se puede modificar
+  final year = 2021;
+  final int day = 4;
+  const month = "march";
+
+
+  //creacion de nuevas variables con el valor de una constante
+  var bar = month;
+  bar = "asd";
+}
