@@ -1,0 +1,39 @@
+void main(){
+
+  var allow = isAllowToEnter(26);
+
+  int channelId = 12;
+  sendMessage("Hola a todos!", channelId ,sound: true);
+  sendMessage("Por favor, conectense a la reunion!", channelId ,urgent: true);
+  sendMessage("Ahora!", channelId  ,sound: true, urgent: true);
+
+  Function someFunction = sendMessage;
+  someFunction.call("Hola",999);
+
+  auth("Julio","12345",sendMessage);
+
+  //anonymous function (lambda, closures). No necesita nombre, como las demas
+  var list = ['naranja','azul','verde'];
+  var printElements = (element) {
+    print(element);
+  };
+
+  list.forEach(printElements);
+}
+
+ void auth(String user, String password, Function(String,int) afterAction){
+  if (user == "Julio") {
+    afterAction.call(user, 234);
+  }
+ }
+
+//named parameters =parametros con nombres, opcionales
+  void sendMessage(String message, int channelId ,{bool? urgent, bool sound = false}) {
+  //Hace algo, envia mensajes
+    print(message);
+    print(channelId);
+  }
+
+bool isAllowToEnter(num age){
+  return age >= 18;
+}
