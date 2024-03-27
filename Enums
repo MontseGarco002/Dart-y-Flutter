@@ -1,0 +1,65 @@
+// Enums = enumerators
+//Tipo especial de dato que agrupan constantes que tienen una razón lógica
+enum LoginStatus{
+  success,
+  error,
+  retry,
+  incorrectPassword,
+  userDontExist
+}
+
+enum Color{
+  rojo,
+  azul,
+  amarillo
+}
+
+enum Rols{
+  Admin,
+  user,
+  supervisor
+}
+void main(){
+
+  var result = loginUser("julio","password");
+
+  switch (result){
+    case LoginStatus.success:
+      // TODO: entra a la app
+      break;
+    case LoginStatus.error:
+      // TODO:
+      break;
+    case LoginStatus.retry:
+      // TODO: Reintentar en 5 segundos
+      break;
+    case LoginStatus.incorrectPassword:
+      // TODO: Handle this case.
+      break;
+    case LoginStatus.userDontExist:
+      // TODO: Handle this case.
+      break;
+    default:
+      throw Exception("Error al hacer al Login")
+  }
+
+  List<LoginStatus> logingStatusValues = LoginStatus.values;
+
+  for (var status in logingStatusValues){
+    //TODO: alguna logica
+  }
+
+  if (result == LoginStatus.values[3]){
+
+  }
+
+  if(result == LoginStatus.incorrectPassword){
+
+  }
+
+}
+
+LoginStatus loginUser(String username, String password){
+  //lógica para iniciar seción
+  return LoginStatus.success;
+}
